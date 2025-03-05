@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 import json
-import pages.gvars
+# import pages.gvars
 
 st.set_page_config(page_title="Tasks", layout="centered")
 
@@ -9,8 +9,8 @@ st.title("BhashaBridge AI Assistance")
 
 
 RolesNum = {
-    "8": "Progress Tracker",
-    "9": "Auto Emailer",
+    "8": "Time Manager",
+    "9": "Do's and Dont's",
 }
 
 # Dropdown for selecting role
@@ -38,7 +38,7 @@ if user_input := st.chat_input("Type your message..."):
         st.markdown(user_input)
 
     url = 'http://localhost:8001/api/v1/chatgroq'
-    myobj = {'role': roleVariable, 'msg': pages.gvars.inp + ", " + user_input}
+    myobj = {'role': roleVariable, 'msg': "" + ", " + user_input}
     response = requests.post(url, json = myobj)
     response = response.json()[0].strip('["]')
 

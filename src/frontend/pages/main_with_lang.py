@@ -16,7 +16,7 @@ import subprocess
 
 st.set_page_config(page_title="Multi Language Voice to Text", layout="centered", page_icon="🎙️")
 load_dotenv()
-client = Groq(api_key=os.getenv("groq_api_key"))
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 # Language options
 languages = {"English": "en", "Hindi": "hi", "Marathi": "mr", "Telugu": "te", "Hinglish": "hi"}
